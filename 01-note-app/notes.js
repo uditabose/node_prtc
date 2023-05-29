@@ -4,11 +4,11 @@ import chalk from 'chalk'
 
 const loadNotes = function() {
     try {
-        const dataBuffer = fs.readdirSync('./notes.json')
+        const dataBuffer = fs.readFileSync('./notes.json')
         const dataJSON = dataBuffer.toString()
         return JSON.parse(dataJSON)
     } catch (e) {
-        console.log(chalk.red('an error occured while reading notes.json: %s', e))
+        console.log(chalk.red('an error occured while reading notes.json: %s'), e)
         return []
     }
 
@@ -36,9 +36,9 @@ const readNotes = function(title) {
     const tehNote = findNotes(title)
 
     if (tehNote) {
-        console.log(chalk.green('note with title %s is found with a body %s', title, tehNote.body))
+        console.log(chalk.green('note with title: %s is found with a body: %s'), title, tehNote.body)
     } else {
-        console.log(chalk.yellow('note with title %s is not found', title))
+        console.log(chalk.yellow('note with title: %s is not found'), title)
     }
 }
 
@@ -51,9 +51,9 @@ const addNotes = function(title, body) {
             title: title,
             body: body
         }, true)
-        console.log(chalk.bold.green('a new note is created with \n\ttitle: %s and \n\tbody: %s', title, body))
+        console.log(chalk.bold.green('a new note is created with \n\ttitle: %s and \n\tbody: %s'), title, body)
     } else {
-        console.log(chalk.yellow('a new note is already there with title: %s', title))
+        console.log(chalk.yellow('a new note is already there with title: %s'), title)
     }
 }
 
@@ -66,7 +66,7 @@ const removeNotes = function(title) {
 const listNotes = function() {
     const allNotes = loadNotes()
     allNotes.forEach(note => {
-        console.log(chalk.bold.blueBright('\ttitle: %s and \n\tbody: %s', title, body))
+        console.log(chalk.bold.blueBright('\ttitle: %s and \n\tbody: %s'), note.title, note.body)
     });
 }
 
