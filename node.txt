@@ -1,0 +1,3 @@
+this is an example file
+this is 2nd line in the example file
+ the value is 5

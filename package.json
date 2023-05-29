@@ -1,0 +1,27 @@
+{
+  "name": "node_prtc",
+  "version": "1.0.0",
+  "description": "nodejs practice",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "notes_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uditabose/node_prtc.git"
+  },
+  "keywords": [
+    "nprtc"
+  ],
+  "author": "pops",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uditabose/node_prtc/issues"
+  },
+  "homepage": "https://github.com/uditabose/node_prtc#readme",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "validator": "^13.9.0"
+  }
+}
